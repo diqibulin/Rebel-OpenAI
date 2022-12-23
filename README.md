@@ -1,6 +1,13 @@
-# WABot-OpenAI
-BACA DULU
+# IQRO
 Ada 2 tipe yaitu bisa menggunakan perintah dan tanpa menggunakan perintah.
-Jika ingin menggunakan perintah silahkan ganti kata true menjadi false di file key.json
-Untuk commandnya menggunakan .ai
-Jika tidak ingin menggunakan perintah silahkan ganti kata false menjadi true di file key.json
+- Kalo mau pake perintah ganti kata true menjadi false di file <a href="https://github.com/diqibulin/WABot-OpenAI/edit/main/README.md#iqro">key.json</a>
+Untuk perintahnya pake <b>.ai</b>
+- Kalo gamau pake perintah, ganti kata false jadi true di file <a href="https://github.com/diqibulin/WABot-OpenAI/edit/main/README.md#iqro">key.json</a>
+# OpenAI ApiKey
+- Buat ApiKey Baru dulu <a href="https://beta.openai.com/account/api-keys">Here<a/>
+- Paste ApiKey di file <a href="https://github.com/diqibulin/WABot-OpenAI/edit/main/README.md#iqro">key.json</a>
+# How To Install
+  <div id="box">$ git clone https://github.com/diqibulin/WABot-OpenAI
+<br>$ cd WABot-OpenAI
+<br>$ npm install
+<br>$ node index.js</div>
