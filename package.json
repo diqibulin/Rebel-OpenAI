@@ -1,7 +1,7 @@
 {
-  "name": "Wa-OpenAI",
-  "version": "1.2.4",
-  "description": "WhatsApp Bot OpenAI Using Lib Baileys Multi Device",
+  "name": "Rebel-OpenAI",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot OpenAI ",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -15,11 +15,11 @@
     "whatsapp-baileys",
     "baileys-md",
     "bot-wa",
-    "bot-md",
     "whatsapp-multi-device"
   ],
-  "base": "https://instagram.com/05.30am",
-  "author": "Diqi Hadiq",
+  "base": "https://github.com/diqibulin/Rebel-OpenAI",
+  "author": "@05.30am",
+  "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "4.4.0",
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -40,10 +40,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diqibulin/WABot-OpenAI.git"
+    "url": "git+https://github.com/diqibulin/Rebel-OpenAI.git"
   },
   "bugs": {
-    "url": "https://github.com/diqibulin/WABot-OpenAI.git"
+    "url": "https://github.com/diqibulin/Rebel-OpenAI/issues"
   },
-  "homepage": "https://github.com/diqibulin/WABot-OpenAI#iqro"
+  "homepage": "https://github.com/diqibulin/Rebel-OpenAI#readme"
 }

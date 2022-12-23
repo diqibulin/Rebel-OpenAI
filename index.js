@@ -1,7 +1,8 @@
-require("http").createServer((_, res) => res.end("Berjalan coy")).listen(8080)
+require("http").createServer((_, res) => res.end("Berjalan cok")).listen(8080)
 
-const sessionName = 'diqi'
-const owner = ['625890999711']
+const sessionName = 'rebelbot'
+const donet = 'minimal follow ig 05.30am'
+const owner = ['085890999711']
 const { default: rebelConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, getContentType } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
@@ -117,10 +118,10 @@ function smsg(conn, m, store) {
     return m
 }
 
-async function startHisoka() {
+async function startrebel() {
     const { version, isLatest } = await fetchLatestBaileysVersion()
 	console.log(`using WA v${version.join('.')}, isLatest: ${isLatest}`)
-    console.log(color(figlet.textSync('Wa-OpenAI', {
+    console.log(color(figlet.textSync('Rebel-OpenAI', {
 		font: 'Standard',
 		horizontalLayout: 'default',
 		vertivalLayout: 'default',
@@ -130,7 +131,7 @@ async function startHisoka() {
     const client = rebelConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['WABot-OpenAI - rebel','Safari','3.0'],
+        browser: ['Rebel-OpenAI - @05.30am','firefox','3.5'],
         auth: state
     })
 
@@ -146,7 +147,7 @@ async function startHisoka() {
             if (!client.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
             if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
             m = smsg(client, mek, store)
-            require("./rebel")(client, m, chatUpdate, store)
+            require("./rebelbot")(client, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
@@ -224,16 +225,16 @@ async function startHisoka() {
         if (connection === 'close') {
             let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startHisoka(); } 
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startHisoka(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startrebel(); } 
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startrebel(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session file yusril.json and Scan Again.`); process.exit(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startHisoka(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startHisoka(); }
-            else { console.log(`Unknown DisconnectReason: ${reason}|${connection}`); startHisoka(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session file rebelbot.json and Scan Again.`); process.exit(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startrebel(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startrebel(); }
+            else { console.log(`Unknown DisconnectReason: ${reason}|${connection}`); startrebel(); }
         } else if(connection === 'open') {
             console.log('Bot conneted to server')
-            client.sendMessage(owner+'@s.whatsapp.net', { text: `Bot started!\n\njangan lupa support ya bang :)\n${donet}` })
+            client.sendMessage(owner+'@s.whatsapp.net', { text: `Bot started!\n\n minimal follow ig :)\n${donet}` })
         }
         // console.log('Connected...', update)
     })
@@ -271,7 +272,7 @@ async function startHisoka() {
     return client
 }
 
-startHisoka()
+startrebel()
 
 
 let file = require.resolve(__filename)
